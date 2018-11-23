@@ -27,5 +27,9 @@ def pets_by_breed(shop,breed)
 end
 
 def find_pet_by_name(shop, name)
-   return shop[:pets].select {|pet| pet[:name] == name}.first
+  return shop[:pets].select {|pet| pet[:name] == name}.first
+end
+
+def remove_pet_by_name(shop, name)
+  return shop[:pets].delete_if {|pet| pet[:name] == name}
 end
