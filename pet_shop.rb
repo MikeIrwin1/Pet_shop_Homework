@@ -71,6 +71,5 @@ def sell_pet_to_customer(shop, pet, customer)
       remove_customer_cash(customer, pet[:price])
       add_or_remove_cash(shop, pet[:price])
     end
-    return
   end
 end
