@@ -24,10 +24,25 @@ end
 
 def pets_by_breed(shop,breed)
   return shop[:pets].select {|pet| pet[:breed] == breed}
+
+# Full form of above
+  # match = []
+  # for pet in shop[:pets]
+  #   match << pet if (pet[:breed] == breed)
+  # end
+  # return match
 end
 
 def find_pet_by_name(shop, name)
-  return shop[:pets].select {|pet| pet[:name] == name}.first
+  return shop[:pets].find {|pet| pet[:name] == name}
+
+# long form of above
+
+  # match = nil
+  # for pet in shop[:pets]
+  #   match = pet if (pet[:name] == name)
+  # end
+  # return match
 end
 
 def remove_pet_by_name(shop, name)
@@ -35,7 +50,7 @@ def remove_pet_by_name(shop, name)
 end
 
 def add_pet_to_stock(shop, new_pet)
-  return shop[:pets]<<new_pet
+  return shop[:pets] << new_pet
 end
 
 def customer_cash(customer)
@@ -43,6 +58,7 @@ def customer_cash(customer)
 end
 
 def remove_customer_cash(customer, cash)
+
   return customer[:cash] -= cash
 end
 
@@ -51,7 +67,7 @@ def customer_pet_count(customer)
 end
 
 def add_pet_to_customer(customer, new_pet)
-  customer[:pets]<<new_pet
+  customer[:pets] << new_pet
   return customer[:pets].length
 end
 
